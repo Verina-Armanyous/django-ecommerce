@@ -37,7 +37,7 @@ class UserProfile(models.Model):
 class Item(models.Model):
     title = models.CharField(max_length=100)
     price = models.FloatField()
-    discount_price = models.FloatField(blank=True, null=True)
+    # discount_price = models.FloatField(blank=True, null=True)
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=2)
     label = models.CharField(choices=LABEL_CHOICES, max_length=1)
     slug = models.SlugField()
@@ -73,19 +73,19 @@ class OrderItem(models.Model):
     def __str__(self):
         return f"{self.quantity} of {self.item.title}"
 
-    def get_total_item_price(self):
+    def get_final_price(self):
         return self.quantity * self.item.price
 
-    def get_total_discount_item_price(self):
-        return self.quantity * self.item.discount_price
+    # def get_total_discount_item_price(self):
+    #     return self.quantity * self.item.discount_price
 
-    def get_amount_saved(self):
-        return self.get_total_item_price() - self.get_total_discount_item_price()
+    # def get_amount_saved(self):
+    #     return self.get_total_item_price() - self.get_total_discount_item_price()
 
-    def get_final_price(self):
-        if self.item.discount_price:
-            return self.get_total_discount_item_price()
-        return self.get_total_item_price()
+    # def get_final_price(self):
+    #     if self.item.discount_price:
+    #         return self.get_total_discount_item_price()
+    #     return self.get_total_item_price()
 
 
 class Order(models.Model):
