@@ -1,14 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
+<style>
+  .category{
+    color: #303c6c !important;
+  }
+  .searchbar-custom{
+    background-color: #ffc717 !important;
+    
+  }
+  input::placeholder {
+  color: #303c6c  !important;
+}
+</style>
 <main>
   <div class="container">
 
     <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark mdb-color lighten-3 mt-3 mb-5">
+    <nav class="navbar navbar-expand-lg navbar-dark mt-3 mb-5 searchbar-custom">
 
       <!-- Navbar brand -->
-      <span class="navbar-brand">Causes:</span>
+      <span class="navbar-brand category">Causes:</span>
 
       <!-- Collapse button -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -22,27 +34,27 @@
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">All
-              <span class="sr-only">(current)</span>
+            <a class="nav-link category" href="#">All
+              <span class="sr-only category">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Animals</a>
+            <a class="nav-link category" href="#">Animals</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Education</a>
+            <a class="nav-link category" href="#">Education</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Environment</a>
+            <a class="nav-link category" href="#">Environment</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Health</a>
+            <a class="nav-link category" href="#">Health</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Human Services</a>
+            <a class="nav-link category" href="#">Human Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Arts, Culture, and Humanities</a>
+            <a class="nav-link category" href="#">Arts, Culture, and Humanities</a>
           </li>
 
         </ul>
@@ -50,7 +62,7 @@
 
         <form class="form-inline">
           <div class="md-form my-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search Cause" aria-label="Search">
+            <input class="form-control mr-sm-2 category" type="text" placeholder="Search Cause" aria-label="Search">
           </div>
         </form>
       </div>
