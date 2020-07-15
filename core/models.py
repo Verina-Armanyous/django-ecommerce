@@ -7,9 +7,10 @@ from django_countries.fields import CountryField
 
 
 CATEGORY_CHOICES = (
-    ('S', 'Shirt'),
-    ('SW', 'Sport wear'),
-    ('OW', 'Outwear')
+    ('A', 'Animals'),
+    ('Edu', 'Education'),
+    ('Env', 'Environment'),
+    ('H', 'Health'), ('HS', 'Human Services'), ("ACH", 'Arts, Culture, and Humanities')
 )
 
 LABEL_CHOICES = (
