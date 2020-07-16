@@ -37,6 +37,8 @@ class Item(models.Model):
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=2)
     slug = models.SlugField()
     description = models.TextField()
+    organization = models.TextField(null=True)
+    org_logo = models.ImageField(null=True)
     image = models.ImageField()
 
     def __str__(self):
