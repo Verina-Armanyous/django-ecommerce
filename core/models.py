@@ -8,9 +8,9 @@ from django_countries.fields import CountryField
 
 CATEGORY_CHOICES = (
     ('A', 'Animals'),
-    ('Edu', 'Education'),
-    ('Env', 'Environment'),
-    ('H', 'Health'), ('HS', 'Human Services'), ("ACH", 'Arts, Culture, and Humanities')
+    ('Ed', 'Education'),
+    ('En', 'Environment'),
+    ('H', 'Health'), ('HS', 'Human Services'), ("AC", 'Arts, Culture, and Humanities')
 )
 
 

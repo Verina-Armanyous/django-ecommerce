@@ -89,7 +89,7 @@
             </div>
 
             <div class="card-body text-center">
-              <a href="" class="green-text">
+              <a href="" class="category">
                 <h5>{{ item.title }}</h5>
               </a>
               <h5>
@@ -99,13 +99,9 @@
                 </strong>
               </h5>
 
-              <h4 class="font-weight-bold blue-text">
+              <h4 class="font-weight-bold category">
                 <strong>$
-                  {% if item.discount_price %}
-                  {{ item.discount_price }}
-                  {% else %}
                   {{ item.price }}
-                  {% endif %}
                 </strong>
               </h4>
               <a href="{{ item.get_absolute_url }}" class="stretched-link"></a>

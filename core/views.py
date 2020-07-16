@@ -26,7 +26,7 @@ def products(request):
     context = {
         'items': Item.objects.all()
     }
-    return render(request, "products.html", context)
+    return render(request, "product.html", context)
 
 
 def is_valid_form(values):
@@ -213,7 +213,7 @@ class PaymentView(View):
             context = {
                 'order': order,
                 'DISPLAY_COUPON_FORM': False,
-                'STRIPE_PUBLIC_KEY' : settings.STRIPE_PUBLIC_KEY
+                'STRIPE_PUBLIC_KEY': settings.STRIPE_PUBLIC_KEY
             }
             userprofile = self.request.user.userprofile
             if userprofile.one_click_purchasing:

@@ -78,7 +78,7 @@
       <!--Grid column-->
       <div class="col-md-4 mb-4">
 
-        <img src="{{ item.org_logo.url }}" class="rounded-circle" width="200" height="200" alt="">
+        <img src="{{ item.org_logo.url|default_if_none:'#' }}" class="rounded-circle" width="200" height="200" alt="">
 
       </div>
       <!--Grid column-->
