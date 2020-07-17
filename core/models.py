@@ -16,7 +16,7 @@ CATEGORY_CHOICES = (
 
 ADDRESS_CHOICES = (
     ('B', 'Billing'),
-    ('S', 'Shipping'),
+    # ('S', 'Shipping'),
 )
 
 
@@ -93,8 +93,8 @@ class Order(models.Model):
     start_date = models.DateTimeField(auto_now_add=True)
     ordered_date = models.DateTimeField()
     ordered = models.BooleanField(default=False)
-    shipping_address = models.ForeignKey(
-        'Address', related_name='shipping_address', on_delete=models.SET_NULL, blank=True, null=True)
+    # shipping_address = models.ForeignKey(
+    #     'Address', related_name='shipping_address', on_delete=models.SET_NULL, blank=True, null=True)
     billing_address = models.ForeignKey(
         'Address', related_name='billing_address', on_delete=models.SET_NULL, blank=True, null=True)
     payment = models.ForeignKey(

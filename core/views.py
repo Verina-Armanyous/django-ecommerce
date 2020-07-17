@@ -49,14 +49,14 @@ class CheckoutView(View):
                 'DISPLAY_COUPON_FORM': True
             }
 
-            shipping_address_qs = Address.objects.filter(
-                user=self.request.user,
-                address_type='S',
-                default=True
-            )
-            if shipping_address_qs.exists():
-                context.update(
-                    {'default_shipping_address': shipping_address_qs[0]})
+            # shipping_address_qs = Address.objects.filter(
+            #     user=self.request.user,
+            #     address_type='S',
+            #     default=True
+            # )
+            # if shipping_address_qs.exists():
+            #     context.update(
+            #         {'default_shipping_address': shipping_address_qs[0]})
 
             billing_address_qs = Address.objects.filter(
                 user=self.request.user,
@@ -297,7 +297,7 @@ class PaymentView(View):
                 order.ref_code = create_ref_code()
                 order.save()
 
-                messages.success(self.request, "Your order was successful!")
+                messages.success(self.request, "You successfully donated!")
                 return redirect("/")
 
             except stripe.error.CardError as e:
