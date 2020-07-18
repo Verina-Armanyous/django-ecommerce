@@ -351,6 +351,11 @@ class HomeView(ListView):
     template_name = "home.html"
 
 
+def CategoryView(request, cats):
+    category_products = Item.objects.filter(category=cats)
+    return render(request, 'categories.html', {'category': cats, 'category_products': category_products})
+
+
 class OrderSummaryView(LoginRequiredMixin, View):
     def get(self, *args, **kwargs):
         try:
