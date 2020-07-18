@@ -7,10 +7,11 @@ from django_countries.fields import CountryField
 
 
 CATEGORY_CHOICES = (
-    ('A', 'Animals'),
-    ('Ed', 'Education'),
-    ('En', 'Environment'),
-    ('H', 'Health'), ('HS', 'Human Services'), ("AC", 'Arts, Culture, and Humanities')
+    ('animals', 'Animals'),
+    ('education', 'Education'),
+    ('environment', 'Environment'),
+    ('health', 'Health'), ('human-service',
+                           'Human Services'), ("humanitites", 'Arts, Culture, and Humanities')
 )
 
 
@@ -34,7 +35,8 @@ class Item(models.Model):
     title = models.CharField(max_length=100)
     price = models.FloatField()
     # discount_price = models.FloatField(blank=True, null=True)
-    category = models.CharField(choices=CATEGORY_CHOICES, max_length=2)
+    category = models.CharField(
+        choices=CATEGORY_CHOICES, max_length=15, blank=True, null=True)
     slug = models.SlugField()
     description = models.TextField()
     organization = models.TextField(null=True)
